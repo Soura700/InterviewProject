@@ -52,6 +52,10 @@ namespace backend.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
+                    b.Property<string>("Role")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
                     b.Property<string>("SkillSet")
                         .IsRequired()
                         .HasColumnType("longtext");
@@ -135,6 +139,10 @@ namespace backend.Migrations
                         .HasColumnType("tinyint(1)");
 
                     b.Property<string>("PasswordHash")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Role")
                         .IsRequired()
                         .HasColumnType("longtext");
 

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Project\\backend\\backend\\backend.csproj": {}
+    "D:\\Project\\Interview\\backend\\backend.csproj": {}
   },
   "projects": {
-    "D:\\Project\\backend\\backend\\backend.csproj": {
+    "D:\\Project\\Interview\\backend\\backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Project\\backend\\backend\\backend.csproj",
+        "projectUniqueName": "D:\\Project\\Interview\\backend\\backend.csproj",
         "projectName": "backend",
-        "projectPath": "D:\\Project\\backend\\backend\\backend.csproj",
+        "projectPath": "D:\\Project\\Interview\\backend\\backend.csproj",
         "packagesPath": "C:\\Users\\soura\\.nuget\\packages\\",
-        "outputPath": "D:\\Project\\backend\\backend\\obj\\",
+        "outputPath": "D:\\Project\\Interview\\backend\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

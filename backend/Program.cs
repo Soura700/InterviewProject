@@ -84,7 +84,41 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(policy =>
+    {
+        policy.AllowAnyOrigin()     // ⚠️ Allow all origins (not recommended in production)
+              .AllowAnyHeader()
+              .AllowAnyMethod();
+    });
+});
+
+// Manual CORS Middleware — Applies to every request
+
+
+
 var app = builder.Build();
+
+app.Use(async (context, next) =>
+{
+    context.Response.Headers.Add("Access-Control-Allow-Origin", "http://localhost:4200");
+    context.Response.Headers.Add("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+    context.Response.Headers.Add("Access-Control-Allow-Headers", "Content-Type, Authorization");
+    context.Response.Headers.Add("Access-Control-Allow-Credentials", "true");
+
+    // Handle preflight requests (OPTIONS)
+    if (context.Request.Method == "OPTIONS")
+    {
+        context.Response.StatusCode = 200;
+        await context.Response.CompleteAsync();
+        return;
+    }
+
+    await next();
+});
+
+app.UseCors();
 
 if (app.Environment.IsDevelopment())
 {
